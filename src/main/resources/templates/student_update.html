@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <h2>Корректировка данных студента</h2>
+    <br>
+
+    <form action="#" th:action="@{'/students/update'}" th:object="${student}" method="post">
+        <p>Id: <input type="text" th:field="*{id}" readonly></p>
+        <p>Имя: <input type="text" th:field="*{name}"/></p>
+        <p>Возраст: <input type="number" th:field="*{age}"/></p>
+        <p><input type="submit" value="Сохранить"/> <input type="reset" value="Отмена"/></p>
+    </form>
+    <a th:href="@{'/students'}" class="btn btn-primary">К списку всех студентов</a>
+</div>
+</body>
+</html>
